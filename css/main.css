@@ -10,12 +10,55 @@
     display: block;
 }
 body{
-    background-color:#111111;
+    background: linear-gradient(145deg, rgba(2,0,36,1) 0%, rgba(236,255,0,1) 50%, rgba(0,0,0,1) 100%);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    height: 100vh;
+    font-family: Arial, Helvetica, sans-serif;
 }
+
+/* make background image force full screen */
 
 #container{
     width: 1080px;
     margin: auto;
+}
+
+header h1 ,header p{
+    color: wheat;
+    font-size: 40px;
+    display: flex;
+    justify-content: center;
+}
+
+h2{
+    color: black;
+    font-size: 30px;
+    display: flex;
+    justify-content: center;
+    padding-top: 70px;
+
+}
+
+#dropzone{
+    border-bottom: dotted white;
+}
+
+.beat{
+    display: flex;
+    flex-direction:row;
+    justify-content: space-evenly;
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+.d1 ,.d2 ,.d3 ,.drop{
+    border: double rgb(255, 255, 255);
+    border-radius: 100%;
+    padding: 10px;
+    width: 160px;
+    height: 160px;
 }
 
 .options-2{
@@ -54,8 +97,16 @@ body{
 
 }
 
-/* how to make a svg rotate */
+/* #music-dev-1{
+    background-image: url(/assets/CD.svg);
+    height: 150px;
+    width: 150px;
+}
 
+#music-dev-1:hover{
+    transition: all 0.5s ease;
+    transform: rotate(15deg);
+} */
 .controls{
     width: 1080px;
     position: fixed;
@@ -64,7 +115,7 @@ body{
     display: flex;
     flex-direction:row;
     justify-content: center;
-    border: solid #b9b8b8;
+    border-top: dotted white;
 
 }
 
@@ -77,8 +128,8 @@ body{
     transform: scale(1.1);
     cursor: pointer;
   }
-
-.hold{
-    border: solid wheat;
+.hovered{
+    background-color:rgb(197, 182, 197);
+    border: dotted;
 }
 
