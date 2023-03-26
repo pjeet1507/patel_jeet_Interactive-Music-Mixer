@@ -1,72 +1,51 @@
-console.log('at lest this is working');
+console.log('at least this is working');
 
 const fill = document.querySelectorAll('.CD');
-const drp = document.querySelector('.drop');
-const d2 = document.querySelector('.d2');
-const d3 = document.querySelector('.d3');
+const drps = document.querySelectorAll('.drop');
+// new thing------
+const reloadBtn = document.getElementById('reload-btn');
+
+
+let draggedPiece = null;
 
 fill.forEach((item) => {
-    item.addEventListener('dragstart', dragStart);
-    item.addEventListener('dragend', dragEnd);
-  });   
-  
-  function dragStart() {
-    console.log('dragging started');
-    const draggedPiece = this
-  }
-  
-  function dragEnd() {
-    console.log('dragging ended');
-  } 
+  item.addEventListener('dragstart', handleStartDrag);
+  item.addEventListener('dragend', dragEnd);
+});
 
-function handleStartDrag() { 
-	console.log('started dragging this piece:', this);
+drps.forEach((drp) => {
+  drp.addEventListener('dragover', handleDragOver);
+  drp.addEventListener('drop', handleDrop);
+});
 
-	// store a reference to the puzzle piece image that we're dragging
-	// so we can use it later and move it to a drop zone
-	draggedPiece = this;
+function handleStartDrag() {
+  console.log('started dragging this piece:', this);
+  draggedPiece = this;
 }
 
-function handleDragOver(e) { 
-	e.preventDefault(); // e is shorthand for event
-	// this overrides the default dragover behaviour
-	console.log('dragged over me'); s
+function dragEnd() {
+  console.log('dragging ended');
 }
 
-function handleDrop(e) { 
-	e.preventDefault();
-	console.log('dropped something on me');
-	// bug fix #1 should go here, and it's at most 3 lines of JS code
+function handleDragOver(e) {
+  e.preventDefault();
+  console.log('dragged over me');
+}
 
-	// this line is going to move the dragged piece from the left side of the board
-	// into whatever drop zone we choose. appendChild means "add element to the container"
-	this.appendChild(draggedPiece);
+function handleDrop(e) {
+  e.preventDefault();
+  console.log('dropped something on me');
+  const targetDrop = this;
+  console.log('targetDrop:', targetDrop);
+  console.log('draggedPiece:', draggedPiece);
+  targetDrop.appendChild(draggedPiece);
 }
 
 
-// for(const drag1 of drp ){
-//     drag1.addEventListener('dragover', dragOver)
-//     drag1.addEventListener('dragenter', dragEnter)
-//     drag1.addEventListener('dragleave', dragLeave)
-//     drag1.addEventListener('drop', dragDrop)
-// }
+// this is uselessss
 
-// function dragOver() {
-//     console.log('over')
+reloadBtn.addEventListener('click', function() {
+  location.reload();
+});
 
-// }
-
-// function dragEnter() {
-//     console.log('End')
-
-// }
-
-// function dragLeave() {
-//     console.log('leave')
-
-// }
-
-// function dragDrop() {
-//     console.log('drop')
-
-// }
+// stop button with a class of reload thet reloads the page
