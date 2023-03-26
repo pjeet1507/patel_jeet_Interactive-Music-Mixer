@@ -1,129 +1,129 @@
 * {
-    border: none;
-    padding: 0;
-    margin: 0;
-    
-    box-sizing: border-box;
+  border: none;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
 .hidden{
-    display: block;
-}
-body{
-    background: linear-gradient(145deg, rgba(2,0,36,1) 0%, rgba(236,255,0,1) 50%, rgba(0,0,0,1) 100%);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center center;
-    height: 100vh;
-    font-family: Arial, Helvetica, sans-serif;
+  display: block;
 }
 
-/* make background image force full screen */
+body{
+  background: linear-gradient(145deg, rgba(2,0,36,1) 0%, rgba(236,255,0,1) 50%, rgba(0,0,0,1) 100%);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  height: 100vh;
+  font-family: Arial, Helvetica, sans-serif;
+}
 
 #container{
-    width: 1080px;
-    margin: auto;
+  width: 1080px;
+  margin: auto;
 }
 
 header h1 ,header p{
-    color: wheat;
-    font-size: 40px;
-    display: flex;
-    justify-content: center;
+  color: wheat;
+  font-size: 40px;
+  display: flex;
+  justify-content: center;
 }
 
 h2{
-    color: black;
-    font-size: 30px;
-    display: flex;
-    justify-content: center;
-    padding-top: 70px;
-
+  color: black;
+  font-size: 30px;
+  display: flex;
+  justify-content: center;
+  padding-top: 70px;
 }
 
 #dropzone{
-    border-bottom: dotted white;
+  border-bottom: dotted white;
 }
 
 .beat{
-    display: flex;
-    flex-direction:row;
-    justify-content: space-evenly;
-    padding-top: 40px;
-    padding-bottom: 40px;
+  display: flex;
+  flex-direction:row;
+  justify-content: space-evenly;
+  padding-top: 40px;
+  padding-bottom: 40px;
 }
 
 .drop{
-    border: double rgb(255, 255, 255);
-    border-radius: 100%;
-    padding: 10px;
-    width: 160px;
-    height: 160px;
-    display: flex;
-    justify-content: center;
+  border: double rgb(255, 255, 255);
+  border-radius: 100%;
+  padding: 10px;
+  width: 160px;
+  height: 160px;
+  display: flex;
+  justify-content: center;
 }
 
 .drop img {
-    animation: spin 5s linear infinite;
-  }
-  
-  @keyframes spin {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
-  }
+  animation: spin 5s linear infinite;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
 
 .options-2{
-    width: 1080px;
-    position: fixed;
-    bottom:200px ;
-    display: flex;
-    justify-content: space-evenly ;
-    border: #b9b8b8;
+  width: 1080px;
+  position: fixed;
+  bottom:200px ;
+  display: flex;
+  justify-content: space-evenly ;
+  border: #b9b8b8;
 }
 
 .options-1{
-    width: 1080px;
-    position: fixed;
-    bottom:350px ;
-    display: flex;
-    justify-content: space-evenly ;
-    border: #b9b8b8;
+  width: 1080px;
+  position: fixed;
+  bottom:350px ;
+  display: flex;
+  justify-content: space-evenly ;
+  border: #b9b8b8;
 }
 
 .options-2 img, .options-1 img{
-    padding: 5px;
+  padding: 5px;
 }
 
 .options-2 img:hover, .options-1 img:hover{
-    transition: all 0.5s ease;
-    transform: rotate(15deg);
-    cursor: pointer;
-
+  transition: all 0.5s ease;
+  transform: rotate(15deg);
+  cursor: pointer;
 }
 
 .controls{
-    width: 1080px;
-    position: fixed;
-    padding: 10px;
-    bottom: 0;
-    display: flex;
-    flex-direction:row;
-    justify-content: center;
-    border-top: dotted white;
-
+  width: 1080px;
+  position: fixed;
+  padding: 10px;
+  bottom: 0;
+  display: flex;
+  flex-direction:row;
+  justify-content: center;
+  border-top: dotted white;
 }
 
 .controls img{
-    height: 100px;
-    transition: all 0.3s ease;
+  height: 100px;
+  transition: all 0.3s ease;
 }
 
 .controls img:hover {
-    transform: scale(1.1);
-    cursor: pointer;
-  }
+  transform: scale(1.1);
+  cursor: pointer;
+}
+
 .hovered{
-    background-color:rgb(197, 182, 197);
-    border: dotted;
+  background-color:rgb(197, 182, 197);
+  border: dotted;
+}
+
+.drop.hovered {
+  border: double rgb(255, 255, 255);
 }
 
