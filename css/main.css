@@ -53,13 +53,24 @@ h2{
     padding-bottom: 40px;
 }
 
-.d1 ,.d2 ,.d3 ,.drop{
+.drop{
     border: double rgb(255, 255, 255);
     border-radius: 100%;
     padding: 10px;
     width: 160px;
     height: 160px;
+    display: flex;
+    justify-content: center;
 }
+
+.drop img {
+    animation: spin 5s linear infinite;
+  }
+  
+  @keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
 
 .options-2{
     width: 1080px;
@@ -83,13 +94,6 @@ h2{
     padding: 5px;
 }
 
-/* .CD{
-    width: 150px;
-    height: 150px;
-    background-color: #b9b8b8;
-    padding-bottom: 5px;
-} */
-
 .options-2 img:hover, .options-1 img:hover{
     transition: all 0.5s ease;
     transform: rotate(15deg);
@@ -97,16 +101,6 @@ h2{
 
 }
 
-/* #music-dev-1{
-    background-image: url(/assets/CD.svg);
-    height: 150px;
-    width: 150px;
-}
-
-#music-dev-1:hover{
-    transition: all 0.5s ease;
-    transform: rotate(15deg);
-} */
 .controls{
     width: 1080px;
     position: fixed;
