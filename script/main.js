@@ -1,21 +1,18 @@
 console.log('at least this is working');
 
-const fill = document.querySelectorAll('.CD');
-const drps = document.querySelectorAll('.drop');
-// new thing------
-const reloadBtn = document.getElementById('reload-btn');
-
+const fills = document.querySelectorAll('.CD');
+const drops = document.querySelectorAll('.drop');
 
 let draggedPiece = null;
 
-fill.forEach((item) => {
+fills.forEach((item) => {
   item.addEventListener('dragstart', handleStartDrag);
   item.addEventListener('dragend', dragEnd);
 });
 
-drps.forEach((drp) => {
-  drp.addEventListener('dragover', handleDragOver);
-  drp.addEventListener('drop', handleDrop);
+drops.forEach((drop) => {
+  drop.addEventListener('dragover', handleDragOver);
+  drop.addEventListener('drop', handleDrop);
 });
 
 function handleStartDrag() {
@@ -35,17 +32,23 @@ function handleDragOver(e) {
 function handleDrop(e) {
   e.preventDefault();
   console.log('dropped something on me');
-  const targetDrop = this;
-  console.log('targetDrop:', targetDrop);
-  console.log('draggedPiece:', draggedPiece);
-  targetDrop.appendChild(draggedPiece);
+
+  // Get the audio element corresponding to the dropped piece
+  let audioId = draggedPiece.getAttribute('data-audio');
+  let audio = document.getElementById(audioId);
+
+  audio.loop = true;
+
+  // Play the audio file
+  audio.play();
+
+  // Append the dragged piece to the drop zone
+  e.target.appendChild(draggedPiece);
 }
 
+const stopBtn = document.querySelector('.stop-btn');
 
-// this is uselessss
-
-reloadBtn.addEventListener('click', function() {
+stopBtn.addEventListener('click', function() {
   location.reload();
 });
 
-// stop button with a class of reload thet reloads the page
